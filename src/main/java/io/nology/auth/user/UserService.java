@@ -18,4 +18,9 @@ public class UserService {
 
     return this.userRepository.save(newUser);
   }
+
+  public User getById(Long id) {
+    User found = this.userRepository.findById(id).orElse(null);
+    return found;
+  }
 }

@@ -12,9 +12,9 @@ public class AppConfig {
 
   @Bean
   public Dotenv dotenv() {
-    return Dotenv.configure().load();
+    return Dotenv.configure().directory("auth/.env").load();
   }
-  
+
   @Bean
   public PasswordEncoder passwordEncoder() {
     return new BCryptPasswordEncoder();
